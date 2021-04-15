@@ -194,4 +194,66 @@
     <footer class="container">
     <p class="lead font-weight-normal, text-align: center;"> <a href="Darian Abreu Resume.pdf"> Darian Abreu, EIT </a> &middot; <a href="mailto: dariannn@udel.edu" style = color:white; >Send Email</a> &middot; <a href="tel:8458261635" style = color:white >Call me at 845-826-1635</a> &middot; <a href="https://www.google.com/maps/place/Pomona,+NY/@41.1897114,-74.0558511,12z/data=!4m2!3m1!1s0x89c2dc98580cb5f1:0x2a4e5fe57de523e?hl=en-us" style = color:white > Pomona, New York 10970 </a> &middot; <a style = color:white href="#top">Back to top ^</a></p>
     </footer>
+    
+    <!--=============== scripts  ===============-->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+    });
+    </script>
+
+
+
+<script>
+        var counter_list = [10,10000,10000];
+        var str_counter_0 = counter_list[0];
+        var str_counter_1 = counter_list[1];
+        var str_counter_2 = counter_list[2];
+        var display_str = "";
+        var display_div = document.getElementById("display_div_id");
+      
+        function incrementCount(current_count){
+          setInterval(function(){
+            // clear count
+            while (display_div.hasChildNodes()) {
+                display_div.removeChild(display_div.lastChild);
+            }
+            str_counter_0++;
+            if (str_counter_0 > 99) {
+              str_counter_0 = 10; // reset count
+              str_counter_1++;    // increase next count
+            }
+            if(str_counter_1>99999){
+              str_counter_2++;
+            }
+            display_str = str_counter_2.toString() + str_counter_1.toString() + str_counter_0.toString();
+            for (var i = 0; i < display_str.length; i++) {
+              var new_span = document.createElement('span');
+              new_span.className = 'num_tiles';
+              new_span.innerText = display_str[i];
+              display_div.appendChild(new_span);
+            }
+          },1000);
+        }
+      </script>
+
+
+<script>
+
+var seconds = 0;
+var el = document.getElementById('seconds-counter');
+
+function incrementSeconds() {
+    seconds += 100;
+    el.innerText = "You have been here for " + seconds + " seconds.";
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
+</script>
 </html>
