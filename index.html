@@ -93,69 +93,35 @@
   opacity: 1;
 }
      
-/* ---- reset ---- */
-
-body {
-  margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
+html, body {
+  
+margin
+: 0;
+  
+padding
+: 0;
 }
-
-canvas {
-  display: block;
-  vertical-align: bottom;
+.background {
+  
+position
+:
+ absolute
+;
+  
+display
+:
+ block
+;
+  
+top
+: 0;
+  
+left
+: 0;
+  
+z-index
+: 0;
 }
-
-/* ---- particles.js container ---- */
-
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #b61924;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-
-.js-count-particles{
-  font-size: 1.1em;
-}
-
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-}
-
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
-            
-            
-
            
         </style>
         
@@ -171,7 +137,8 @@ canvas {
     
     
     <body>
-        
+     
+
         <a name="top"></a>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
         <img src="/0.jpeg" width="30" height="30" alt="" loading="lazy">
@@ -364,19 +331,70 @@ canvas {
               </div>                                                        
                                         </div>                           
          
+  Particles.
+init
+({
+  
+// normal options
+  selector: 
+'.background'
+,
+  maxParticles: 
+450
+,
+  
+// options for breakpoints
+  responsive: [
+    {
+      breakpoint: 
+768
+,
+      options: {
+        maxParticles: 
+200
+,
+        color: 
+'#48F2E3'
+,
+        connectParticles: 
+false
+      }
+    }, {
+      breakpoint: 
+425
+,
+      options: {
+        maxParticles: 
+100
+,
+        connectParticles: 
+true
+      }
+    }, {
+      breakpoint: 
+320
+,
+      options: {
+        maxParticles: 
+0
+ 
+// disables particles.js
+      }
+    }
+  ]
+});                                      
                                         
                                         
-<!-- particles.js container -->
-<div id="particles-js"></div>
+<canvas class=
+"background"
+></canvas>
+            
+<script src=
+"particles.min.js"
+></script>
 
-<!-- stats - count particles -->
-<div class="count-particles">
-  <span class="js-count-particles">--</span> particles
-</div>
-
-<!-- particles.js lib (JavaScript CodePen settings): https://github.com/VincentGarreau/particles.js -->
-                                  
-                                  
+                  
+                  </body>
                                   
                       
    <footer class="container">
